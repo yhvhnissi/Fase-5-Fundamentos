@@ -1,0 +1,40 @@
+# Matriz de la videoteca
+videoteca = [
+    ["Inception", 2010, 9, "Ciencia Ficcion"],
+    ["Dune", 2021, 8, "Ciencia Ficcion"],
+    ["Barbie", 2023, 7, "Comedia"],
+    ["Oppenheimer", 2023, 9, "Drama"],
+    ["The Batman", 2022, 8, "Accion"],
+    ["Avatar 2", 2022, 7, "Fantasia"],
+    ["Top Gun Maverick", 2022, 9, "Accion"]
+]
+
+# Funcion para contar titulos
+def contar_titulos(matriz, calificacion_minima, anio_limite):
+    
+    contador = 0
+
+    for titulo in matriz:
+        
+        anio = titulo[1]
+        calificacion = titulo[2]
+
+        if calificacion >= calificacion_minima and anio >= anio_limite:
+            contador += 1
+
+    return contador
+
+
+# Valores de prueba
+umbral_calificacion = 8
+anio_limite = 2020
+
+# Llamado de la funcion
+resultado = contar_titulos(
+    videoteca,
+    umbral_calificacion,
+    anio_limite
+)
+
+# Mostrar resultado
+print("Cantidad de titulos que cumplen los criterios:", resultado)
